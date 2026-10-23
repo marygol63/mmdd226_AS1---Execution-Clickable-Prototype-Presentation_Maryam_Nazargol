@@ -1,0 +1,776 @@
+/* ==========================================================================
+   Prototype A: Order-First Support Styles (Exact to Sketch Row A)
+   Student: Maryam Nazargol
+   ========================================================================== */
+
+/* Mobile Header */
+.mobile-header {
+  background: var(--wm-blue-dark);
+  color: #FFFFFF;
+  padding: 14px 18px;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-spark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.user-greeting {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--wm-spark-yellow);
+  color: var(--wm-blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.screen-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   Screen 1: Sketch Menu List (My Orders, Account, Walmart+, Help)
+   ========================================================================== */
+.sketch-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item-row {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+  width: 100%;
+}
+
+.menu-item-row:hover, .menu-item-row:focus-visible {
+  border-color: var(--wm-blue-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.menu-item-row.primary-row {
+  border: 2px solid var(--wm-blue-primary);
+  background: linear-gradient(to right, #FFFFFF, #F0F7FF);
+}
+
+.menu-item-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menu-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: #F1F5F9;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon-wrap.box-icon {
+  background: #EBF3FC;
+  color: var(--wm-blue-primary);
+}
+
+.menu-icon-wrap.plus-icon {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+.menu-item-texts {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-title {
+  font-size: var(--font-size-base);
+  color: var(--text-main);
+}
+
+.menu-subtitle {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.menu-item-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--wm-blue-primary);
+}
+
+.sketch-annotation-pill {
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-size: 12.5px;
+  color: #1E40AF;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Screen 2: Segmented Tabs (Online | In store) & Orders List
+   ========================================================================== */
+.segmented-tabs {
+  display: flex;
+  background: #E2E8F0;
+  border-radius: var(--radius-full);
+  padding: 4px;
+  gap: 4px;
+}
+
+.seg-tab {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.seg-tab.active {
+  background: #FFFFFF;
+  color: var(--wm-blue-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.orders-sketch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-box-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all var(--transition-fast);
+}
+
+.order-box-card.clickable-order {
+  cursor: pointer;
+  border: 1.5px solid #93C5FD;
+}
+
+.order-box-card.clickable-order:hover {
+  border-color: var(--wm-blue-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.sketch-box-symbol {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: #EFF6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sketch-box-symbol.muted {
+  background: #F1F5F9;
+}
+
+.order-info-cell {
+  flex: 1;
+}
+
+.order-num {
+  font-size: var(--font-size-md);
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+.order-status-date {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.order-arrow-cell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tap-hint {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--wm-blue-primary);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Screen 3: Order #1234 Details
+   ========================================================================== */
+.order-detail-banner {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.box-badge-large {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  background: #EBF3FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delivery-status-headline {
+  display: block;
+  font-size: var(--font-size-md);
+  color: var(--text-main);
+}
+
+.delivery-date-full {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.detail-menu-group {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.detail-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: var(--font-size-base);
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.detail-action-row:last-child {
+  border-bottom: none;
+}
+
+.detail-action-row:hover {
+  background: #F8FAFC;
+}
+
+.btn-get-help {
+  margin-top: 8px;
+  font-size: 1.05rem;
+  padding: 14px;
+}
+
+/* ==========================================================================
+   Screen 4: How can we help? (Radio list exact to sketch)
+   ========================================================================== */
+.sketch-radio-fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sketch-radio-option {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.sketch-radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.sketch-radio-option.checked {
+  border-color: var(--wm-blue-primary);
+  background: #F0F7FF;
+}
+
+.sketch-radio-option.checked .custom-radio-circle {
+  border-color: var(--wm-blue-primary);
+  background: var(--wm-blue-primary);
+  box-shadow: inset 0 0 0 3px #FFFFFF;
+}
+
+.radio-label-text {
+  font-size: var(--font-size-base);
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   Screen 5: Live Agent (Connecting, loader dots, wait estimate)
+   ========================================================================== */
+.live-agent-center-content {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 32px 18px;
+  min-height: 440px;
+}
+
+.headset-icon-large {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-full);
+  background: #EBF3FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 113, 220, 0.2);
+  animation: pulseHeadset 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseHeadset {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.connecting-heading {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 14px;
+}
+
+.loader-dots-sketch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.loader-dots-sketch span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--wm-blue-primary);
+  animation: bounceDot 1.4s infinite ease-in-out both;
+}
+
+.loader-dots-sketch span:nth-child(1) { animation-delay: -0.32s; }
+.loader-dots-sketch span:nth-child(2) { animation-delay: -0.16s; }
+.loader-dots-sketch span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes bounceDot {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+.estimated-wait-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.sketch-callout-quote {
+  background: #FFFBEB;
+  border: 1.5px dashed #F59E0B;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  color: #B45309;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 280px;
+}
+
+.quote-spark {
+  color: var(--wm-spark-orange);
+  font-weight: bold;
+}
+
+.agent-connected-card {
+  margin-top: 18px;
+  background: #FFFFFF;
+  border: 2px solid var(--wm-blue-primary);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  animation: fadeIn 300ms ease;
+  width: 100%;
+}
+
+.agent-avatar-ring {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--wm-blue-primary);
+  color: #FFFFFF;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.agent-connected-info {
+  flex: 1;
+}
+
+.agent-connected-info strong {
+  display: block;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   Bonus: Live Chat Styles
+   ========================================================================== */
+.chat-screen-layout {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 10px 14px;
+}
+
+.agent-avatar-wrap {
+  position: relative;
+  width: 34px;
+  height: 34px;
+}
+
+.agent-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--wm-spark-yellow);
+  color: var(--wm-blue-dark);
+  font-weight: 800;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent-online-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--status-success);
+  border: 2px solid #FFFFFF;
+}
+
+.agent-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-role {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.chat-pinned-order {
+  background: #EFF6FF;
+  border-bottom: 1px solid #BFDBFE;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.chat-messages-area {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-timestamp {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.message-bubble {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.system-bubble {
+  align-self: center;
+  background: #F1F5F9;
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  max-width: 90%;
+}
+
+.agent-bubble {
+  align-self: flex-start;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  border-bottom-left-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.message-sender {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--wm-blue-primary);
+  margin-bottom: 2px;
+}
+
+.message-time {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 4px;
+}
+
+.user-bubble {
+  align-self: flex-end;
+  background: var(--wm-blue-primary);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-input-bar {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  gap: 8px;
+}
+
+.chat-input-field {
+  flex: 1;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  padding: 8px 14px;
+  font-size: 13px;
+  outline: none;
+}
+
+.chat-send-btn {
+  background: var(--wm-blue-primary);
+  border: none;
+  color: #FFFFFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Sketch Comparison Slide-Over Modal & Toolbar Button
+   ========================================================================== */
+.sketch-toggle-btn {
+  background: #FFC220;
+  color: #041E42;
+  border: none;
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sketch-toggle-btn:hover {
+  background: #f5b716;
+}
+
+.sketch-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 17, 32, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sketch-modal-content {
+  background: #1E293B;
+  color: #FFFFFF;
+  border: 1px solid #334155;
+  border-radius: var(--radius-lg);
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.sketch-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  margin-top: 4px;
+}
+
+.btn-close-modal {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-close-modal:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sketch-modal-body {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sketch-modal-desc {
+  font-size: var(--font-size-sm);
+  color: #CBD5E1;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.sketch-image-container {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.sketch-crop-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Crop to Row A: Order-First */
+.crop-a {
+  object-fit: cover;
+  object-position: 0 0%;
+  max-height: 280px;
+}

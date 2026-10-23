@@ -1,0 +1,577 @@
+/* ==========================================================================
+   MMDD-226: Walmart Mobile Customer Support UX Redesign
+   Shared Design System & Common Styles
+   Student: Maryam Nazargol
+   ========================================================================== */
+
+:root {
+  /* Brand Colors */
+  --wm-blue-primary: #0071DC;
+  --wm-blue-hover: #005bb5;
+  --wm-blue-dark: #041E42;
+  --wm-blue-light: #EBF3FC;
+  --wm-spark-yellow: #FFC220;
+  --wm-spark-orange: #F59E0B;
+  
+  /* Semantic Status Colors */
+  --status-success: #0B823D;
+  --status-success-bg: #E8F7EE;
+  --status-warning: #B45309;
+  --status-warning-bg: #FEF3C7;
+  --status-danger: #D92D20;
+  --status-danger-bg: #FEE4E2;
+  --status-info: #0284C7;
+  --status-info-bg: #E0F2FE;
+
+  /* Neutral Surface & Text Palette */
+  --bg-app: #F3F4F6;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F8FAFC;
+  --text-main: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #6B7280;
+  --text-inverse: #FFFFFF;
+  --border-light: #E5E7EB;
+  --border-medium: #D1D5DB;
+  --border-focus: #0071DC;
+
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.84375rem;  /* 13.5px */
+  --font-size-base: 0.9375rem; /* 15px */
+  --font-size-md: 1.0625rem;   /* 17px */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.5rem;      /* 24px */
+  --font-size-xxl: 1.875rem;   /* 30px */
+
+  /* Radius & Shadows */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-float: 0 12px 28px rgba(0, 0, 0, 0.15);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-family);
+  background-color: #0F172A; /* Sleek desktop wrapper background */
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Desktop Testing Chrome / Frame Controller Bar
+   Allows seamless toggling between mobile phone bezel and fluid view
+   ========================================================================== */
+.demo-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: #041E42;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: var(--font-size-sm);
+}
+
+.demo-top-bar a.hub-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.12);
+  transition: background var(--transition-fast);
+}
+
+.demo-top-bar a.hub-link:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.demo-prototype-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #93C5FD;
+}
+
+.demo-badge-pill {
+  background: var(--wm-spark-yellow);
+  color: var(--wm-blue-dark);
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.demo-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.demo-toggle-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.demo-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.demo-toggle-btn.active {
+  background: var(--wm-blue-primary);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Device Simulator Frame (Mobile Viewport 390px x 844px)
+   ========================================================================== */
+.device-wrapper {
+  padding-top: 56px;
+  padding-bottom: 24px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0b1120 0%, #1e293b 100%);
+}
+
+.device-frame {
+  width: 390px;
+  height: 844px;
+  max-height: calc(100vh - 72px);
+  background: var(--bg-surface);
+  border-radius: 44px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 10px #1E293B, 0 0 0 12px #334155;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mode: Full viewport responsive toggle */
+body.fluid-mode .device-wrapper {
+  padding: 48px 0 0 0;
+  align-items: stretch;
+  background: var(--bg-app);
+}
+
+body.fluid-mode .device-frame {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  height: calc(100vh - 48px);
+  max-height: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Phone Status Bar (Simulated iOS/Android dynamic bar) */
+.phone-status-bar {
+  height: 44px;
+  background: var(--wm-blue-dark);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  font-size: 13px;
+  font-weight: 600;
+  user-select: none;
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+.phone-status-bar.light-theme {
+  background: #FFFFFF;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.status-notch {
+  width: 120px;
+  height: 22px;
+  background: #000000;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+/* Mobile App Viewport Inner Canvas */
+.app-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--bg-app);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ==========================================================================
+   Standard Mobile Navigation Components
+   ========================================================================== */
+.app-header {
+  background: var(--wm-blue-dark);
+  color: #FFFFFF;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.app-header.with-back {
+  background: #FFFFFF;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.header-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-btn:focus-visible {
+  outline: 2px solid var(--border-focus);
+}
+
+/* Brand Spark Logo Icon */
+.wm-spark-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--wm-spark-yellow);
+}
+
+/* Academic Simulation Banner */
+.simulation-pill-banner {
+  background: #FEF3C7;
+  border-bottom: 1px solid #FDE68A;
+  color: #92400E;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.simulation-pill-banner .tag {
+  background: #B45309;
+  color: #FFFFFF;
+  padding: 1px 6px;
+  border-radius: var(--radius-xs);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+  height: 56px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 4px;
+  flex-shrink: 0;
+  z-index: 80;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 10.5px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  text-decoration: none;
+  width: 25%;
+  transition: color var(--transition-fast);
+}
+
+.nav-item.active {
+  color: var(--wm-blue-primary);
+  font-weight: 700;
+}
+
+.nav-item svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   Buttons, Badges & Interactive Controls
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--wm-blue-primary);
+  color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 113, 220, 0.25);
+}
+
+.btn-primary:hover {
+  background: var(--wm-blue-hover);
+}
+
+.btn-secondary {
+  background: #FFFFFF;
+  color: var(--wm-blue-primary);
+  border-color: var(--wm-blue-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--wm-blue-light);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--wm-blue-primary);
+}
+
+.btn-ghost:hover {
+  background: rgba(0, 113, 220, 0.08);
+}
+
+.btn-spark {
+  background: var(--wm-spark-yellow);
+  color: var(--wm-blue-dark);
+  font-weight: 700;
+}
+
+.btn-spark:hover {
+  background: #f5b716;
+}
+
+.btn-sm {
+  padding: 8px 14px;
+  font-size: var(--font-size-sm);
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-success {
+  background: var(--status-success-bg);
+  color: var(--status-success);
+}
+
+.badge-warning {
+  background: var(--status-warning-bg);
+  color: var(--status-warning);
+}
+
+.badge-danger {
+  background: var(--status-danger-bg);
+  color: var(--status-danger);
+}
+
+.badge-info {
+  background: var(--status-info-bg);
+  color: var(--status-info);
+}
+
+/* ==========================================================================
+   Card System
+   ========================================================================== */
+.card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-clickable {
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card-clickable:hover {
+  border-color: var(--wm-blue-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.card-clickable:active {
+  transform: scale(0.99);
+}
+
+/* ==========================================================================
+   Toast Notification
+   ========================================================================== */
+.toast-container {
+  position: absolute;
+  top: 56px;
+  left: 16px;
+  right: 16px;
+  z-index: 1000;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toast {
+  background: #1E293B;
+  color: #FFFFFF;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 250ms ease;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Screen Transitions */
+.view-screen {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px;
+  animation: fadeIn 200ms ease;
+}
+
+.view-screen.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility classes */
+.flex-1 { flex: 1; }
+.text-center { text-align: center; }
+.mb-2 { margin-bottom: 8px; }
+.mb-3 { margin-bottom: 12px; }
+.mb-4 { margin-bottom: 16px; }
+.text-muted { color: var(--text-muted); }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }

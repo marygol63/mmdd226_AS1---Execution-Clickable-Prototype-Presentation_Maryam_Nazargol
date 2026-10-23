@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype B: Support-First Workflow | Walmart Mobile Support Redesign</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Academic Demo Toolbar -->
+  <header class="demo-top-bar" role="banner">
+    <a href="../index.html" class="hub-link" id="backToHubBtn" title="Return to Main Prototype Hub">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <span>Back to Hub</span>
+    </a>
+    <div class="demo-prototype-badge">
+      <span class="demo-badge-pill">Prototype B</span>
+      <span>Support-First Workflow</span>
+    </div>
+    <div class="demo-controls">
+      <button class="sketch-toggle-btn" id="btnToggleSketchModal" aria-label="View original hand-drawn sketch">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <span>View Sketch B</span>
+      </button>
+      <button class="demo-toggle-btn active" id="viewModeToggle" aria-label="Toggle between mobile device frame and responsive fluid view">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <span id="viewModeText">Phone Frame (390×844)</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Device Simulator Container -->
+  <main class="device-wrapper">
+    <div class="device-frame" id="deviceFrame">
+      
+      <!-- Phone Status Bar -->
+      <div class="phone-status-bar" id="phoneStatusBar">
+        <span class="status-time">9:41</span>
+        <div class="status-notch"></div>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>100%</span>
+        </div>
+      </div>
+
+      <!-- Simulation Badge -->
+      <div class="simulation-pill-banner">
+        <span><strong>Prototype B:</strong> Support-First Workflow</span>
+        <span class="tag">Exact to Sketch</span>
+      </div>
+
+      <!-- App Viewport Canvas -->
+      <div class="app-screen" id="appScreenContainer">
+
+        <!-- ==========================================
+             SCREEN 1: Walmart Home / Search Help (Sketch B1)
+             ========================================== -->
+        <section id="screen-home" class="view-screen active" aria-labelledby="home-brand">
+          <header class="mobile-header">
+            <div class="header-top">
+              <div class="brand-spark">
+                <svg class="wm-spark-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l1.6 5.8L19.4 5l-4.1 4.7 5.7 2.3-5.7 2.3 4.1 4.7-5.8-2.8L12 22l-1.6-5.8L4.6 19l4.1-4.7L3 12l5.7-2.3L4.6 5l5.8 2.8L12 2z"/>
+                </svg>
+                <span class="brand-text" id="home-brand">Walmart</span>
+              </div>
+            </div>
+
+            <!-- Sketch B1 Search Bar: Search help... -->
+            <div class="home-search-bar" id="homeSearchBar" role="button" tabindex="0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input type="text" placeholder="Search help..." class="search-input-mock" readonly aria-label="Search help">
+            </div>
+          </header>
+
+          <div class="screen-content">
+            <!-- Sketch B1 Menu List -->
+            <div class="sketch-menu-list">
+              
+              <!-- Option 1: Help Centre (Primary Action) -->
+              <button class="menu-item-row primary-row" id="btnGoToHelpCentre" aria-label="Go to Help Centre">
+                <div class="menu-item-left">
+                  <div class="menu-icon-wrap support-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  </div>
+                  <div class="menu-item-texts">
+                    <span class="menu-title font-bold">Help Centre</span>
+                    <span class="menu-subtitle">Contact support, live chat & FAQs</span>
+                  </div>
+                </div>
+                <div class="menu-item-right">
+                  <span class="badge badge-warning">24/7 Live</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </div>
+              </button>
+
+              <!-- Option 2: My Orders -->
+              <div class="menu-item-row" tabindex="0">
+                <div class="menu-item-left">
+                  <div class="menu-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><line x1="3" y1="13" x2="21" y2="13"/></svg>
+                  </div>
+                  <span class="menu-title">My Orders</span>
+                </div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+
+              <!-- Option 3: Returns -->
+              <div class="menu-item-row" tabindex="0">
+                <div class="menu-item-left">
+                  <div class="menu-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  </div>
+                  <span class="menu-title">Returns</span>
+                </div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+
+              <!-- Option 4: Account -->
+              <div class="menu-item-row" tabindex="0">
+                <div class="menu-item-left">
+                  <div class="menu-icon-wrap">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                  <span class="menu-title">Account</span>
+                </div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+
+            </div>
+
+            <!-- Annotation Note Box -->
+            <div class="sketch-annotation-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span>Tap <strong>Help Centre</strong> to follow Maryam's Support-First flow.</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 2: Help Centre (Sketch B2)
+             ========================================== -->
+        <section id="screen-help-centre" class="view-screen" aria-labelledby="help-title">
+          <header class="app-header with-back">
+            <div class="header-left">
+              <button class="header-btn" id="btnBackToHome" aria-label="Go back to Home">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <h1 class="header-title" id="help-title">Help Centre</h1>
+            </div>
+          </header>
+
+          <div class="screen-content">
+            <div class="sketch-radio-fieldset" role="list">
+              
+              <!-- Option 1: Contact Support (Clickable Target) -->
+              <label class="sketch-radio-option checked priority-option" id="rowContactSupport" for="optContactSupport">
+                <input type="radio" name="helpTopic" id="optContactSupport" checked>
+                <span class="custom-radio-circle"></span>
+                <div class="radio-label-wrapper">
+                  <span class="radio-label-text font-bold">Contact Support</span>
+                  <span class="badge badge-success text-xs">Live Agents Available</span>
+                </div>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </label>
+
+              <!-- Option 2: Track an order -->
+              <label class="sketch-radio-option" for="optTrackOrder">
+                <input type="radio" name="helpTopic" id="optTrackOrder">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">Track an order</span>
+              </label>
+
+              <!-- Option 3: Returns & refunds -->
+              <label class="sketch-radio-option" for="optReturnsRefunds">
+                <input type="radio" name="helpTopic" id="optReturnsRefunds">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">Returns & refunds</span>
+              </label>
+
+              <!-- Option 4: Manage account -->
+              <label class="sketch-radio-option" for="optManageAccount">
+                <input type="radio" name="helpTopic" id="optManageAccount">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">Manage account</span>
+              </label>
+
+              <!-- Option 5: Walmart+ -->
+              <label class="sketch-radio-option" for="optWmPlus">
+                <input type="radio" name="helpTopic" id="optWmPlus">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">Walmart+</span>
+              </label>
+
+              <!-- Option 6: More help topics -->
+              <label class="sketch-radio-option" for="optMoreHelp">
+                <input type="radio" name="helpTopic" id="optMoreHelp">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">More help topics</span>
+              </label>
+
+            </div>
+
+            <button class="btn btn-primary" id="btnProceedToWhatNeed" aria-label="Proceed with Contact Support">
+              <span>Continue to Support Options</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 3: What do you need help with? (Sketch B3)
+             ========================================== -->
+        <section id="screen-what-need" class="view-screen" aria-labelledby="what-need-title">
+          <header class="app-header with-back">
+            <div class="header-left">
+              <button class="header-btn" id="btnBackToHelpCentre" aria-label="Back to Help Centre">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <h1 class="header-title" id="what-need-title">What do you need help with?</h1>
+            </div>
+          </header>
+
+          <div class="screen-content">
+            <!-- Sketch B3 Radio List -->
+            <fieldset class="sketch-radio-fieldset">
+              
+              <label class="sketch-radio-option checked" for="optNeedOrder">
+                <input type="radio" name="needHelpTopic" id="optNeedOrder" value="An order" checked>
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text font-bold">An order</span>
+              </label>
+
+              <label class="sketch-radio-option" for="optNeedReturns">
+                <input type="radio" name="needHelpTopic" id="optNeedReturns" value="Returns">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">Returns</span>
+              </label>
+
+              <label class="sketch-radio-option" for="optNeedAccount">
+                <input type="radio" name="needHelpTopic" id="optNeedAccount" value="Account">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">Account</span>
+              </label>
+
+              <label class="sketch-radio-option" for="optNeedPayment">
+                <input type="radio" name="needHelpTopic" id="optNeedPayment" value="Payment">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">Payment</span>
+              </label>
+
+              <label class="sketch-radio-option" for="optNeedWmPlus">
+                <input type="radio" name="needHelpTopic" id="optNeedWmPlus" value="Walmart+">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">Walmart+</span>
+              </label>
+
+              <label class="sketch-radio-option" for="optNeedSomethingElse">
+                <input type="radio" name="needHelpTopic" id="optNeedSomethingElse" value="Something else">
+                <span class="custom-radio-circle"></span>
+                <span class="radio-label-text">Something else</span>
+              </label>
+
+            </fieldset>
+
+            <!-- Sketch B3 CTA: Continue -->
+            <button class="btn btn-primary" id="btnContinueToSelectOrder" aria-label="Continue to select order">
+              <span>Continue</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 4: Select your order (Sketch B4)
+             ========================================== -->
+        <section id="screen-select-order" class="view-screen" aria-labelledby="select-order-title">
+          <header class="app-header with-back">
+            <div class="header-left">
+              <button class="header-btn" id="btnBackToWhatNeed" aria-label="Back to topic selection">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <h1 class="header-title" id="select-order-title">Select your order</h1>
+            </div>
+          </header>
+
+          <div class="screen-content">
+            <!-- Sketch B4 Subtabs: Online | In store -->
+            <div class="segmented-tabs" role="tablist">
+              <button class="seg-tab active" id="tabProtoBOnline" role="tab" aria-selected="true">Online</button>
+              <button class="seg-tab" id="tabProtoBInStore" role="tab" aria-selected="false">In store</button>
+            </div>
+
+            <!-- Sketch B4 Radio Order List -->
+            <fieldset class="sketch-radio-fieldset">
+              
+              <!-- Order 1: Order #1234 Delivered Jun 3 (Checked) -->
+              <label class="sketch-radio-option checked" for="optOrder1234">
+                <input type="radio" name="selectedTargetOrder" id="optOrder1234" value="Order #1234" checked>
+                <span class="custom-radio-circle"></span>
+                <div class="order-select-text">
+                  <span class="order-num font-bold">Order #1234</span>
+                  <span class="order-date-text">Delivered Jun 3</span>
+                </div>
+              </label>
+
+              <!-- Order 2: Order #5678 Delivered Jan 28 -->
+              <label class="sketch-radio-option" for="optOrder5678">
+                <input type="radio" name="selectedTargetOrder" id="optOrder5678" value="Order #5678">
+                <span class="custom-radio-circle"></span>
+                <div class="order-select-text">
+                  <span class="order-num font-bold">Order #5678</span>
+                  <span class="order-date-text">Delivered Jan 28</span>
+                </div>
+              </label>
+
+              <!-- Order 3: Order #9012 Delivered Sep 12 -->
+              <label class="sketch-radio-option" for="optOrder9012">
+                <input type="radio" name="selectedTargetOrder" id="optOrder9012" value="Order #9012">
+                <span class="custom-radio-circle"></span>
+                <div class="order-select-text">
+                  <span class="order-num font-bold">Order #9012</span>
+                  <span class="order-date-text">Delivered Sep 12</span>
+                </div>
+              </label>
+
+            </fieldset>
+
+            <!-- Sketch B4 CTA: Continue -->
+            <button class="btn btn-primary" id="btnContinueToLiveAgentB" aria-label="Continue to live agent">
+              <span>Continue</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 5: Live Agent (Sketch B5)
+             ========================================== -->
+        <section id="screen-live-agent-b" class="view-screen" aria-labelledby="live-agent-b-title">
+          <header class="app-header with-back">
+            <div class="header-left">
+              <button class="header-btn" id="btnBackToSelectOrder" aria-label="Back to order selection">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <h1 class="header-title" id="live-agent-b-title">Live Agent</h1>
+            </div>
+          </header>
+
+          <div class="screen-content live-agent-center-content">
+            
+            <!-- Sketch B5 Headset Icon -->
+            <div class="headset-icon-large">
+              <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="1.8">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+              </svg>
+            </div>
+
+            <!-- Sketch B5 Connecting... text -->
+            <h2 class="connecting-heading">Connecting...</h2>
+
+            <!-- Sketch B5 Loader Dots -->
+            <div class="loader-dots-sketch" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+
+            <!-- Sketch B5 Estimated wait -->
+            <div class="estimated-wait-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              <span>Estimated wait: <strong>2-4 min</strong></span>
+            </div>
+
+            <!-- Handwritten Annotation Callout (from Sketch) -->
+            <div class="sketch-callout-quote">
+              <span class="quote-spark">✦</span>
+              <em>"good if they don't have an order in mind"</em>
+            </div>
+
+            <!-- Agent Connected Card -->
+            <div class="agent-connected-card" id="agentConnectedCardB" style="display: none;">
+              <div class="agent-avatar-ring">DM</div>
+              <div class="agent-connected-info">
+                <strong>David M. is ready!</strong>
+                <span class="text-xs text-muted">Order #1234 details attached</span>
+              </div>
+              <button class="btn btn-spark btn-sm" id="btnEnterChatRoomB">Enter Live Chat</button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 6 (Bonus): Live Chat View
+             ========================================== -->
+        <section id="screen-chat-b" class="view-screen chat-screen-layout" aria-labelledby="chat-b-title" style="display: none;">
+          <header class="app-header chat-header">
+            <div class="header-left">
+              <button class="header-btn" id="btnExitChatB" aria-label="End conversation and return">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <div class="agent-avatar-wrap">
+                <div class="agent-avatar">DM</div>
+                <span class="agent-online-dot"></span>
+              </div>
+              <div class="agent-info">
+                <h1 class="header-title" id="chat-b-title">David M.</h1>
+                <span class="agent-role">Walmart Care Specialist</span>
+              </div>
+            </div>
+            <div class="header-right">
+              <span class="badge badge-success">Connected</span>
+            </div>
+          </header>
+
+          <div class="chat-pinned-order">
+            <div class="pinned-info">
+              <span class="pinned-tag">Routed from Support:</span>
+              <strong>Order #1234</strong> • Jun 3 Delivery
+            </div>
+            <span class="badge badge-info">Ticket #7712</span>
+          </div>
+
+          <div class="chat-messages-area" id="chatMessagesAreaB" role="log" aria-live="polite">
+            <div class="chat-timestamp">Today, 9:43 AM</div>
+            
+            <div class="message-bubble system-bubble">
+              <span>Customer connected via Help Centre. Order #1234 context transferred to David M.</span>
+            </div>
+
+            <div class="message-bubble agent-bubble">
+              <div class="message-sender">David M.</div>
+              <div class="message-text">
+                Hi Maryam! Thanks for reaching out through our Help Centre. I see you selected <strong>Order #1234</strong> (Delivered Jun 3). How can I assist you with this order today?
+              </div>
+              <div class="message-time">9:43 AM</div>
+            </div>
+
+            <div id="dynamicUserMessagesB"></div>
+          </div>
+
+          <footer class="chat-input-bar">
+            <input type="text" id="chatInputB" class="chat-input-field" placeholder="Type your reply to David..." aria-label="Type message">
+            <button class="chat-send-btn" id="btnSendMessageB" aria-label="Send message">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </footer>
+        </section>
+
+      </div><!-- End app-screen -->
+
+      <!-- Mobile Bottom Navigation (Exact to Sketch B1: Home, Shop, Orders, Account) -->
+      <nav class="bottom-nav" id="mainBottomNav" aria-label="Mobile navigation">
+        <button class="nav-item active" id="navItemHome" aria-label="Home tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Home</span>
+        </button>
+        <button class="nav-item" id="navItemShop" aria-label="Shop tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span>Shop</span>
+        </button>
+        <button class="nav-item" id="navItemOrders" aria-label="Orders tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><line x1="3" y1="13" x2="21" y2="13"/></svg>
+          <span>Orders</span>
+        </button>
+        <button class="nav-item" id="navItemAccount" aria-label="Account tab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Account</span>
+        </button>
+      </nav>
+
+    </div><!-- End device-frame -->
+  </main>
+
+  <!-- Sketch Comparison Slide-Over Modal -->
+  <div class="sketch-modal-overlay" id="sketchModalOverlay" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="sketchModalTitle">
+    <div class="sketch-modal-content">
+      <div class="sketch-modal-header">
+        <div>
+          <span class="badge badge-info">Hand-Drawn Wireframe</span>
+          <h2 class="modal-title font-bold" id="sketchModalTitle">Row B: Support-First Workflow</h2>
+        </div>
+        <button class="btn-close-modal" id="btnCloseSketchModal" aria-label="Close sketch viewer">✕</button>
+      </div>
+      <div class="sketch-modal-body">
+        <p class="sketch-modal-desc">
+          Compare Maryam's hand-drawn wireframe row with the interactive prototype. Notice the exact match across the 5 screens:
+          <strong>Home (Search help...) → Help Centre (Contact Support) → What do you need help with? (An order) → Select your order (Jun 3) → Live Agent (Connecting... 2-4 min)</strong>.
+        </p>
+        <div class="sketch-image-container">
+          <img src="../sketches/walmart_ux_sketches.png" alt="Maryam Nazargol hand-drawn sketch for Flow B" class="sketch-crop-img crop-b">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

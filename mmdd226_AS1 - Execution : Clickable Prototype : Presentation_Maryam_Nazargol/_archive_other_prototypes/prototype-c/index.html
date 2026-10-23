@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype C: Transparent Queue Experience | Walmart Mobile Support Redesign</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Academic Demo Toolbar -->
+  <header class="demo-top-bar" role="banner">
+    <a href="../index.html" class="hub-link" id="backToHubBtn" title="Return to Main Prototype Hub">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <span>Back to Hub</span>
+    </a>
+    <div class="demo-prototype-badge">
+      <span class="demo-badge-pill">Prototype C</span>
+      <span>Transparent Queue UX</span>
+    </div>
+    <div class="demo-controls">
+      <button class="sketch-toggle-btn" id="btnToggleSketchModal" aria-label="View original hand-drawn sketch">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <span>View Sketch C</span>
+      </button>
+      <button class="demo-toggle-btn active" id="viewModeToggle" aria-label="Toggle between mobile device frame and responsive fluid view">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <span id="viewModeText">Phone Frame (390×844)</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Device Simulator Container -->
+  <main class="device-wrapper">
+    <div class="device-frame" id="deviceFrame">
+      
+      <!-- Phone Status Bar -->
+      <div class="phone-status-bar" id="phoneStatusBar">
+        <span class="status-time">9:41</span>
+        <div class="status-notch"></div>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>100%</span>
+        </div>
+      </div>
+
+      <!-- Simulation Badge -->
+      <div class="simulation-pill-banner">
+        <span><strong>Prototype C:</strong> Queue Experience</span>
+        <span class="tag">Exact to Sketch</span>
+      </div>
+
+      <!-- App Viewport Canvas -->
+      <div class="app-screen" id="appScreenContainer">
+
+        <!-- ==========================================
+             SCREEN 1: Live Support - Initial Queue (Sketch C1)
+             ========================================== -->
+        <section id="screen-queue-initial" class="view-screen active" aria-labelledby="queue-c1-title">
+          <header class="app-header with-back">
+            <div class="header-left">
+              <span class="brand-spark">
+                <svg class="wm-spark-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l1.6 5.8L19.4 5l-4.1 4.7 5.7 2.3-5.7 2.3 4.1 4.7-5.8-2.8L12 2l-1.6-5.8L4.6 19l4.1-4.7L3 12l5.7-2.3L4.6 5l5.8 2.8L12 2z"/>
+                </svg>
+              </span>
+              <h1 class="header-title" id="queue-c1-title">Live Support</h1>
+            </div>
+          </header>
+
+          <div class="screen-content queue-center-screen">
+            <!-- Sketch C1 Headset Icon -->
+            <div class="queue-headset-wrap">
+              <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="1.8">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+              </svg>
+            </div>
+
+            <!-- Sketch C1 Heading -->
+            <h2 class="queue-main-title font-bold">You're in the queue!</h2>
+
+            <!-- Sketch C1 Estimated wait -->
+            <div class="queue-est-box">
+              <span>Estimated wait time: <strong>3 - 7 min</strong></span>
+            </div>
+
+            <!-- Sketch C1 Progress Bar -->
+            <div class="sketch-progress-track">
+              <div class="sketch-progress-fill" style="width: 25%;"></div>
+            </div>
+
+            <!-- Sketch C1 Position #12 -->
+            <div class="queue-pos-callout font-bold">
+              Your position: <span class="highlight-num">#12</span>
+            </div>
+
+            <!-- Accelerator / Demo speed tool -->
+            <div class="queue-control-actions">
+              <button class="btn btn-primary btn-advance-demo" id="btnAdvanceToC2" aria-label="Simulate wait advance">
+                <span>Advance to Position #5 ⏩</span>
+              </button>
+              <button class="btn btn-secondary btn-cancel-queue" id="btnCancelQueue1" aria-label="Cancel queue">
+                <span>Cancel</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 2: Live Support - Advanced Position #5 (Sketch C2)
+             ========================================== -->
+        <section id="screen-queue-advanced" class="view-screen" aria-labelledby="queue-c2-title">
+          <header class="app-header with-back">
+            <div class="header-left">
+              <span class="brand-spark">
+                <svg class="wm-spark-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l1.6 5.8L19.4 5l-4.1 4.7 5.7 2.3-5.7 2.3 4.1 4.7-5.8-2.8L12 2l-1.6-5.8L4.6 19l4.1-4.7L3 12l5.7-2.3L4.6 5l5.8 2.8L12 2z"/>
+                </svg>
+              </span>
+              <h1 class="header-title" id="queue-c2-title">Live Support</h1>
+            </div>
+          </header>
+
+          <div class="screen-content queue-center-screen">
+            <!-- Sketch C2 Headset Icon -->
+            <div class="queue-headset-wrap pulsating">
+              <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="1.8">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+              </svg>
+            </div>
+
+            <!-- Sketch C2 Estimated wait -->
+            <div class="queue-est-box">
+              <span>Estimated wait time: <strong>2 - 5 min</strong></span>
+            </div>
+
+            <!-- Sketch C2 Progress Bar (60%) -->
+            <div class="sketch-progress-track">
+              <div class="sketch-progress-fill" style="width: 60%;"></div>
+            </div>
+
+            <!-- Sketch C2 Position #5 -->
+            <div class="queue-pos-callout font-bold">
+              Your position: <span class="highlight-num">#5</span>
+            </div>
+
+            <!-- Sketch C2 Callout Card: You can still view your order while you wait -->
+            <div class="sketch-info-box">
+              <div class="info-circle-i">i</div>
+              <p>You can still view your order while you wait.</p>
+            </div>
+
+            <!-- Sketch C2 CTA: View My Order -->
+            <button class="btn btn-primary btn-view-my-order" id="btnViewMyOrder" aria-label="View My Order without losing place">
+              <span>View My Order</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 3: My Orders (Browse without losing spot) (Sketch C3)
+             ========================================== -->
+        <section id="screen-queue-orders" class="view-screen" aria-labelledby="queue-orders-title">
+          <header class="app-header with-back">
+            <div class="header-left">
+              <button class="header-btn" id="btnBackToQueueDashboard" aria-label="Back to queue status">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <h1 class="header-title" id="queue-orders-title">My Orders</h1>
+            </div>
+            <div class="header-right">
+              <span class="badge badge-warning" id="pillQueueActiveSpot">In Queue #5</span>
+            </div>
+          </header>
+
+          <div class="screen-content">
+            <!-- Non-blocking Sticky Queue Banner -->
+            <div class="queue-active-hud-strip">
+              <div class="hud-left">
+                <span class="hud-radar-dot"></span>
+                <span>Active Spot: <strong>Position #5</strong></span>
+              </div>
+              <span class="hud-wait">Est. 2-5 min</span>
+            </div>
+
+            <!-- Sketch C3 Subtabs: Online | In store -->
+            <div class="segmented-tabs" role="tablist">
+              <button class="seg-tab active" id="tabProtoCOnline" role="tab" aria-selected="true">Online</button>
+              <button class="seg-tab" id="tabProtoCInStore" role="tab" aria-selected="false">In store</button>
+            </div>
+
+            <!-- Sketch C3 Order List -->
+            <div class="orders-sketch-list" role="list">
+              
+              <!-- Card 1: Order #1234 Delivered Apr 3 -->
+              <div class="order-box-card" role="listitem">
+                <div class="box-icon-cell">
+                  <div class="sketch-box-symbol">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="1.8"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><line x1="3" y1="13" x2="21" y2="13"/></svg>
+                  </div>
+                </div>
+                <div class="order-info-cell">
+                  <div class="order-num font-bold">Order #1234</div>
+                  <div class="order-status-date">Delivered Apr 3</div>
+                </div>
+              </div>
+
+              <!-- Card 2: Order #5678 Delivered Mar 28 -->
+              <div class="order-box-card" role="listitem">
+                <div class="box-icon-cell">
+                  <div class="sketch-box-symbol muted">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="1.8"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><line x1="3" y1="13" x2="21" y2="13"/></svg>
+                  </div>
+                </div>
+                <div class="order-info-cell">
+                  <div class="order-num font-bold">Order #5678</div>
+                  <div class="order-status-date">Delivered Mar 28</div>
+                </div>
+              </div>
+
+              <!-- Card 3: Order #9012 Delivered Mar 12 -->
+              <div class="order-box-card" role="listitem">
+                <div class="box-icon-cell">
+                  <div class="sketch-box-symbol muted">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="1.8"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><line x1="3" y1="13" x2="21" y2="13"/></svg>
+                  </div>
+                </div>
+                <div class="order-info-cell">
+                  <div class="order-num font-bold">Order #9012</div>
+                  <div class="order-status-date">Delivered Mar 12</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Sketch C3 Annotation Guarantee Note -->
+            <div class="sketch-callout-quote centered">
+              <span class="quote-spark">✓</span>
+              <em>(doesn't lose place in queue)</em>
+            </div>
+
+            <!-- Button to simulate Agent ready alert -->
+            <button class="btn btn-spark mt-2" id="btnSimulateAgentReady" aria-label="Trigger Agent Ready Alert">
+              <span>Simulate: Agent Is Ready! 🔔</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 4: Agent Ready Alert (Sketch C4)
+             ========================================== -->
+        <section id="screen-agent-ready" class="view-screen" aria-labelledby="agent-ready-title">
+          <header class="app-header with-back">
+            <div class="header-left">
+              <button class="header-btn" id="btnBackToOrdersFromReady" aria-label="Back">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <h1 class="header-title" id="agent-ready-title">Live Support</h1>
+            </div>
+          </header>
+
+          <div class="screen-content queue-center-screen">
+            
+            <!-- Sketch C4 Headset with Radiant Rays -->
+            <div class="headset-spark-rays">
+              <div class="spark-ray ray-1"></div>
+              <div class="spark-ray ray-2"></div>
+              <div class="spark-ray ray-3"></div>
+              <div class="spark-ray ray-4"></div>
+              <div class="queue-headset-wrap radiant-glow">
+                <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="2">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Sketch C4 Heading -->
+            <h2 class="agent-ready-headline font-bold">An agent is ready for you!</h2>
+            <p class="agent-ready-subtext">Liam K. has connected to your session.</p>
+
+            <!-- Sketch C4 Primary Action: Join Now -->
+            <button class="btn btn-primary btn-join-now" id="btnJoinNow" aria-label="Join chat now">
+              <span>Join Now</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <!-- Sketch C4 Secondary Action: Not now (keep my place?) -->
+            <div class="not-now-wrap">
+              <button class="btn-link-subtle" id="btnNotNow">Not now</button>
+              <span class="sketch-hint-tag">keep my place?</span>
+            </div>
+
+            <!-- Handwritten Annotation Callout (from Sketch) -->
+            <div class="sketch-callout-quote mt-4">
+              <span class="quote-spark">✦</span>
+              <em>"let them check order without losing their spot"</em>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 5 (Bonus): Live Chat Screen
+             ========================================== -->
+        <section id="screen-chat-c" class="view-screen chat-screen-layout" aria-labelledby="chat-c-title" style="display: none;">
+          <header class="app-header chat-header">
+            <div class="header-left">
+              <button class="header-btn" id="btnExitChatC" aria-label="End conversation and return">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <div class="agent-avatar-wrap">
+                <div class="agent-avatar">LK</div>
+                <span class="agent-online-dot"></span>
+              </div>
+              <div class="agent-info">
+                <h1 class="header-title" id="chat-c-title">Liam K.</h1>
+                <span class="agent-role">Walmart Live Agent</span>
+              </div>
+            </div>
+            <div class="header-right">
+              <span class="badge badge-success">Live</span>
+            </div>
+          </header>
+
+          <div class="chat-pinned-order">
+            <div class="pinned-info">
+              <span class="pinned-tag">Queue Priority:</span>
+              <strong>Spot Retained</strong> • Order #1234 Synced
+            </div>
+            <span class="badge badge-info">Verified</span>
+          </div>
+
+          <div class="chat-messages-area" id="chatMessagesAreaC" role="log" aria-live="polite">
+            <div class="chat-timestamp">Today, 9:44 AM</div>
+            
+            <div class="message-bubble system-bubble">
+              <span>You reached position #1 in queue. Session smoothly connected without refreshing.</span>
+            </div>
+
+            <div class="message-bubble agent-bubble">
+              <div class="message-sender">Liam K.</div>
+              <div class="message-text">
+                Hello Maryam! Thanks for holding in line. I have your account open and I'm ready to help you with your order inquiry!
+              </div>
+              <div class="message-time">9:44 AM</div>
+            </div>
+
+            <div id="dynamicUserMessagesC"></div>
+          </div>
+
+          <footer class="chat-input-bar">
+            <input type="text" id="chatInputC" class="chat-input-field" placeholder="Type your reply to Liam..." aria-label="Type message">
+            <button class="chat-send-btn" id="btnSendMessageC" aria-label="Send message">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </footer>
+        </section>
+
+      </div><!-- End app-screen -->
+
+    </div><!-- End device-frame -->
+  </main>
+
+  <!-- Sketch Comparison Slide-Over Modal -->
+  <div class="sketch-modal-overlay" id="sketchModalOverlay" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="sketchModalTitle">
+    <div class="sketch-modal-content">
+      <div class="sketch-modal-header">
+        <div>
+          <span class="badge badge-info">Hand-Drawn Wireframe</span>
+          <h2 class="modal-title font-bold" id="sketchModalTitle">Row C: Transparent Queue UX</h2>
+        </div>
+        <button class="btn-close-modal" id="btnCloseSketchModal" aria-label="Close sketch viewer">✕</button>
+      </div>
+      <div class="sketch-modal-body">
+        <p class="sketch-modal-desc">
+          Compare Maryam's hand-drawn wireframe row with the interactive prototype. Notice the exact match across the 4 screens:
+          <strong>Live Support (Position #12, 3-7 min) → Position #5 (View My Order) → My Orders (doesn't lose place in queue) → An agent is ready for you! (Join Now / Not now keep place)</strong>.
+        </p>
+        <div class="sketch-image-container">
+          <img src="../sketches/walmart_ux_sketches.png" alt="Maryam Nazargol hand-drawn sketch for Flow C" class="sketch-crop-img crop-c">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

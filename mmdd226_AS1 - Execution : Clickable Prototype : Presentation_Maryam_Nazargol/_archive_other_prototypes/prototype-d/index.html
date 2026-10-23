@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype D: Context-Aware Live Chat | Walmart Mobile Support Redesign</title>
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Academic Demo Toolbar -->
+  <header class="demo-top-bar" role="banner">
+    <a href="../index.html" class="hub-link" id="backToHubBtn" title="Return to Main Prototype Hub">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      <span>Back to Hub</span>
+    </a>
+    <div class="demo-prototype-badge">
+      <span class="demo-badge-pill">Prototype D</span>
+      <span>Context-Aware Chat</span>
+    </div>
+    <div class="demo-controls">
+      <button class="sketch-toggle-btn" id="btnToggleSketchModal" aria-label="View original hand-drawn sketch">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        <span>View Sketch D</span>
+      </button>
+      <button class="demo-toggle-btn active" id="viewModeToggle" aria-label="Toggle between mobile device frame and responsive fluid view">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        <span id="viewModeText">Phone Frame (390×844)</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Device Simulator Container -->
+  <main class="device-wrapper">
+    <div class="device-frame" id="deviceFrame">
+      
+      <!-- Phone Status Bar -->
+      <div class="phone-status-bar" id="phoneStatusBar">
+        <span class="status-time">10:14</span>
+        <div class="status-notch"></div>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>100%</span>
+        </div>
+      </div>
+
+      <!-- Simulation Badge -->
+      <div class="simulation-pill-banner">
+        <span><strong>Prototype D:</strong> Context-Aware Live Chat</span>
+        <span class="tag">Exact to Sketch</span>
+      </div>
+
+      <!-- App Viewport Canvas (Chat Container) -->
+      <div class="app-screen chat-master-container" id="appScreenContainer">
+
+        <!-- ==========================================
+             CHAT APP HEADER (Exact to Sketch D: < Live Chat :)
+             ========================================== -->
+        <header class="app-header chat-header" role="banner">
+          <div class="header-left">
+            <a href="../index.html" class="header-btn" title="Back" aria-label="Back">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+            </a>
+            <h1 class="header-title" id="chatHeaderTitle">Live Chat</h1>
+          </div>
+          <div class="header-right">
+            <!-- Persistent Order Details Drawer Toggle Button -->
+            <button class="btn-order-details-toggle" id="btnToggleOrderDetails" aria-label="View Order Details Drawer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><line x1="3" y1="13" x2="21" y2="13"/></svg>
+              <span>Order Details</span>
+            </button>
+            <button class="header-menu-dots-btn" id="btnMenuDots" aria-label="Chat menu options">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+            </button>
+          </div>
+        </header>
+
+        <!-- Pinned Floating Context Strip (Order details stay visible while chatting) -->
+        <div class="chat-pinned-context-bar" id="pinnedContextBar">
+          <div class="pinned-text-group">
+            <span class="pinned-order-tag font-bold">Order #1234</span>
+            <span class="pinned-product-name">• Portable Blender ($24.99)</span>
+          </div>
+          <button class="btn-inspect-mini" id="btnQuickInspect">Inspect ↗</button>
+        </div>
+
+        <!-- ==========================================
+             SCROLLABLE CHAT MESSAGES STREAM
+             (Exact Dialogue from Sketch D1, D3, D4)
+             ========================================== -->
+        <div class="chat-stream-body" id="chatStreamBody" role="log" aria-live="polite">
+          
+          <!-- Screen D1 Messages -->
+          <div class="chat-bubble agent-bubble">
+            <div class="bubble-text">Hi! Thanks for chatting with Walmart support. How can I help you today?</div>
+            <div class="bubble-time">10:14 AM</div>
+          </div>
+
+          <div class="chat-bubble user-bubble">
+            <div class="bubble-text">Hi, I received a damaged item in my order.</div>
+            <div class="bubble-time">10:15 AM</div>
+          </div>
+
+          <!-- Dynamic Container for progressive conversation steps -->
+          <div id="dynamicDialogueContainer"></div>
+
+          <!-- Typing Indicator -->
+          <div class="typing-bubble" id="typingBubble" style="display: none;">
+            <div class="typing-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="typing-text">Walmart Agent is typing...</span>
+          </div>
+
+        </div><!-- End chat-stream-body -->
+
+        <!-- Quick Flow Simulator Bar (To walk through Screen D1 -> D2 -> D3 -> D4) -->
+        <div class="sketch-flow-advance-bar" id="sketchFlowBar">
+          <span class="flow-step-label">Sketch Step:</span>
+          <button class="btn-flow-step" id="btnStepD2">2. Inspect Order 📋</button>
+          <button class="btn-flow-step" id="btnStepD3">3. Send Photo 📸</button>
+          <button class="btn-flow-step" id="btnStepD4">4. Replacement 📦</button>
+        </div>
+
+        <!-- ==========================================
+             PERMANENTLY ACCESSIBLE BOTTOM INPUT BAR
+             (Exact to Sketch: 📎 Attachment + "Type a message..." + ➤ Send)
+             ========================================== -->
+        <footer class="chat-sticky-footer">
+          <form class="chat-composer-form" id="chatComposerForm" onsubmit="return false;">
+            
+            <!-- Attachment Icon (Clip/Photo) -->
+            <button type="button" class="composer-tool-btn" id="btnAttachment" title="Attach photo of damaged item" aria-label="Attach photo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l7.88-7.88"/></svg>
+            </button>
+
+            <input 
+              type="text" 
+              id="messageTextInput" 
+              class="composer-input" 
+              placeholder="Type a message..." 
+              autocomplete="off" 
+              aria-label="Type a message">
+
+            <button type="submit" class="composer-send-btn" id="btnSubmitMessage" aria-label="Send message">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </footer>
+
+        <!-- ==========================================
+             SCREEN D2: ORDER DETAILS SLIDE-OVER DRAWER
+             (Exact to Sketch D2: Order #1234, Portable Blender, Need help options)
+             ========================================== -->
+        <div class="order-details-drawer" id="orderDetailsDrawer" role="region" aria-labelledby="orderDrawerHeading">
+          <header class="app-header with-back drawer-header">
+            <div class="header-left">
+              <button class="header-btn" id="btnCloseOrderDetails" aria-label="Close Order Details and return to chat">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <h2 class="header-title" id="orderDrawerHeading">Order Details</h2>
+            </div>
+            <div class="header-right">
+              <button class="header-menu-dots-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+              </button>
+            </div>
+          </header>
+
+          <div class="drawer-content">
+            <!-- Sketch D2 Top Summary -->
+            <div class="order-box-card">
+              <div class="box-icon-cell">
+                <div class="sketch-box-symbol">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="1.8"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><line x1="3" y1="13" x2="21" y2="13"/></svg>
+                </div>
+              </div>
+              <div class="order-info-cell">
+                <div class="order-num font-bold">Order #1234</div>
+                <div class="order-status-date">Delivered Apr 20</div>
+              </div>
+            </div>
+
+            <!-- Sketch D2 Item Card: Portable Blender $24.99 Qty: 1 -->
+            <div class="item-product-card" tabindex="0">
+              <div class="blender-icon-wrap">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="2"><path d="M10 2v4"/><path d="M14 2v4"/><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M12 18v4"/><path d="M8 22h8"/></svg>
+              </div>
+              <div class="item-product-details">
+                <strong class="product-title font-bold">Portable Blender</strong>
+                <div class="product-pricing">
+                  <span class="price-val font-semibold">$24.99</span>
+                  <span class="qty-val text-muted">Qty: 1</span>
+                </div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+
+            <!-- Sketch D2: "Need help with this item?" Group -->
+            <div class="need-help-section">
+              <h3 class="need-help-title">Need help with this item?</h3>
+
+              <div class="need-help-options">
+                <!-- Option 1: Damaged item -->
+                <button class="need-help-row selected-help" id="btnSelectDamagedItem">
+                  <span>Damaged item</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0071dc" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+
+                <!-- Option 2: Return item -->
+                <button class="need-help-row" id="btnSelectReturnItem">
+                  <span>Return item</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+
+                <!-- Option 3: Get more help -->
+                <button class="need-help-row" id="btnSelectGetMoreHelp">
+                  <span>Get more help</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Handwritten Annotation Callout (from Sketch) -->
+            <div class="sketch-callout-quote centered mt-3">
+              <span class="quote-spark">✦</span>
+              <em>"order details stay visible while chatting"</em>
+            </div>
+
+            <button class="btn btn-primary mt-3" id="btnReturnToChatFromDrawer">
+              <span>Return to Live Chat</span>
+            </button>
+          </div>
+        </div><!-- End order-details-drawer -->
+
+      </div><!-- End app-screen -->
+
+    </div><!-- End device-frame -->
+  </main>
+
+  <!-- Sketch Comparison Slide-Over Modal -->
+  <div class="sketch-modal-overlay" id="sketchModalOverlay" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="sketchModalTitle">
+    <div class="sketch-modal-content">
+      <div class="sketch-modal-header">
+        <div>
+          <span class="badge badge-info">Hand-Drawn Wireframe</span>
+          <h2 class="modal-title font-bold" id="sketchModalTitle">Row D: Responsive Context-Aware Live Chat</h2>
+        </div>
+        <button class="btn-close-modal" id="btnCloseSketchModal" aria-label="Close sketch viewer">✕</button>
+      </div>
+      <div class="sketch-modal-body">
+        <p class="sketch-modal-desc">
+          Compare Maryam's hand-drawn wireframe row with the interactive prototype. Notice the exact match across the 4 screens:
+          <strong>Live Chat (10:14-10:15) → Order Details (Portable Blender $24.99) → Live Chat photo upload (10:16-10:17) → Live Chat replacement resolution (10:18-10:19)</strong>.
+        </p>
+        <div class="sketch-image-container">
+          <img src="../sketches/walmart_ux_sketches.png" alt="Maryam Nazargol hand-drawn sketch for Flow D" class="sketch-crop-img crop-d">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

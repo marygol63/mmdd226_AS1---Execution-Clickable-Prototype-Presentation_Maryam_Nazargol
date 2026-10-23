@@ -1,0 +1,603 @@
+/* ==========================================================================
+   Prototype C: Queue Experience Styles (Exact to Sketch Row C)
+   Student: Maryam Nazargol
+   ========================================================================== */
+
+.queue-center-screen {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 32px 20px;
+  min-height: 480px;
+}
+
+.queue-headset-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-full);
+  background: #EBF3FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px -5px rgba(0, 113, 220, 0.2);
+}
+
+.queue-headset-wrap.pulsating {
+  animation: pulseScale 2s infinite ease-in-out;
+}
+
+@keyframes pulseScale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.queue-main-title {
+  font-size: 1.45rem;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.queue-est-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 8px 18px;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.sketch-progress-track {
+  width: 100%;
+  max-width: 280px;
+  height: 14px;
+  background: #E2E8F0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 18px;
+  border: 1px solid var(--border-light);
+}
+
+.sketch-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0071DC, #38BDF8);
+  border-radius: var(--radius-full);
+  transition: width 600ms ease;
+}
+
+.queue-pos-callout {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 24px;
+}
+
+.highlight-num {
+  color: var(--wm-blue-primary);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.sketch-info-box {
+  background: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  max-width: 300px;
+  margin-bottom: 24px;
+}
+
+.info-circle-i {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--wm-blue-primary);
+  color: var(--wm-blue-primary);
+  font-weight: 800;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sketch-info-box p {
+  font-size: 13px;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.btn-view-my-order, .btn-advance-demo {
+  max-width: 280px;
+}
+
+.btn-cancel-queue {
+  max-width: 280px;
+  margin-top: 8px;
+}
+
+.queue-control-actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Screen 3: Sticky Queue Header & Orders List
+   ========================================================================== */
+.queue-active-hud-strip {
+  background: #FEF3C7;
+  border: 1px solid #FDE68A;
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #92400E;
+}
+
+.hud-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-radar-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #D97706;
+  animation: radarPing 1.5s infinite;
+}
+
+@keyframes radarPing {
+  0% { transform: scale(0.9); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(0.9); opacity: 1; }
+}
+
+.hud-wait {
+  font-weight: 700;
+}
+
+.segmented-tabs {
+  display: flex;
+  background: #E2E8F0;
+  border-radius: var(--radius-full);
+  padding: 4px;
+  gap: 4px;
+}
+
+.seg-tab {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.seg-tab.active {
+  background: #FFFFFF;
+  color: var(--wm-blue-primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.orders-sketch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-box-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sketch-box-symbol {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: #EFF6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sketch-box-symbol.muted {
+  background: #F1F5F9;
+}
+
+.order-info-cell {
+  flex: 1;
+}
+
+.order-num {
+  font-size: var(--font-size-md);
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+.order-status-date {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.sketch-callout-quote {
+  background: #FFFBEB;
+  border: 1.5px dashed #F59E0B;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  color: #B45309;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 280px;
+}
+
+.sketch-callout-quote.centered {
+  margin: 10px auto;
+}
+
+/* ==========================================================================
+   Screen 4: Radiant Headset with Sparkles & Rays (Sketch C4)
+   ========================================================================== */
+.headset-spark-rays {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.spark-ray {
+  position: absolute;
+  width: 14px;
+  height: 3px;
+  background: #FFC220;
+  border-radius: 2px;
+}
+
+.ray-1 { top: 0px; left: 16px; transform: rotate(-45deg); }
+.ray-2 { top: 0px; right: 16px; transform: rotate(45deg); }
+.ray-3 { bottom: 6px; left: 12px; transform: rotate(45deg); }
+.ray-4 { bottom: 6px; right: 12px; transform: rotate(-45deg); }
+
+.radiant-glow {
+  background: linear-gradient(135deg, #EFF6FF, #FEF3C7);
+  border: 3px solid #FFC220;
+  box-shadow: 0 0 30px rgba(255, 194, 32, 0.4);
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from { box-shadow: 0 0 15px rgba(255, 194, 32, 0.3); }
+  to { box-shadow: 0 0 35px rgba(255, 194, 32, 0.7); }
+}
+
+.agent-ready-headline {
+  font-size: 1.45rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.agent-ready-subtext {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.btn-join-now {
+  max-width: 280px;
+  font-size: 1.05rem;
+  padding: 14px;
+}
+
+.not-now-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.btn-link-subtle {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sketch-hint-tag {
+  font-size: 11.5px;
+  color: #B45309;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Bonus: Live Chat Styles
+   ========================================================================== */
+.chat-screen-layout {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 10px 14px;
+}
+
+.agent-avatar-wrap {
+  position: relative;
+  width: 34px;
+  height: 34px;
+}
+
+.agent-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--wm-spark-yellow);
+  color: var(--wm-blue-dark);
+  font-weight: 800;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent-online-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--status-success);
+  border: 2px solid #FFFFFF;
+}
+
+.agent-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-role {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.chat-pinned-order {
+  background: #EFF6FF;
+  border-bottom: 1px solid #BFDBFE;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.chat-messages-area {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-timestamp {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.message-bubble {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.system-bubble {
+  align-self: center;
+  background: #F1F5F9;
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  max-width: 90%;
+}
+
+.agent-bubble {
+  align-self: flex-start;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  border-bottom-left-radius: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.message-sender {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--wm-blue-primary);
+  margin-bottom: 2px;
+}
+
+.message-time {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 4px;
+}
+
+.user-bubble {
+  align-self: flex-end;
+  background: var(--wm-blue-primary);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-input-bar {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  gap: 8px;
+}
+
+.chat-input-field {
+  flex: 1;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  padding: 8px 14px;
+  font-size: 13px;
+  outline: none;
+}
+
+.chat-send-btn {
+  background: var(--wm-blue-primary);
+  border: none;
+  color: #FFFFFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Sketch Comparison Slide-Over Modal & Toolbar Button
+   ========================================================================== */
+.sketch-toggle-btn {
+  background: #FFC220;
+  color: #041E42;
+  border: none;
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sketch-toggle-btn:hover {
+  background: #f5b716;
+}
+
+.sketch-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 17, 32, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sketch-modal-content {
+  background: #1E293B;
+  color: #FFFFFF;
+  border: 1px solid #334155;
+  border-radius: var(--radius-lg);
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.sketch-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  margin-top: 4px;
+}
+
+.btn-close-modal {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-close-modal:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sketch-modal-body {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sketch-modal-desc {
+  font-size: var(--font-size-sm);
+  color: #CBD5E1;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.sketch-image-container {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.sketch-crop-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Crop to Row C: Queue Experience */
+.crop-c {
+  object-fit: cover;
+  object-position: 0 66%;
+  max-height: 280px;
+}

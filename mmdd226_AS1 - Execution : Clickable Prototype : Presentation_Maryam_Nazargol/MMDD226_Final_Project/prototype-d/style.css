@@ -1,0 +1,623 @@
+/* ==========================================================================
+   Prototype D: Context-Aware Live Chat Styles (Exact to Sketch Row D)
+   Student: Maryam Nazargol
+   ========================================================================== */
+
+.chat-master-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  background: #F8FAFC;
+  overflow: hidden;
+}
+
+/* Chat Header */
+.chat-header {
+  background: #FFFFFF;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-light);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  z-index: 50;
+}
+
+.btn-order-details-toggle {
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  color: var(--wm-blue-primary);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+}
+
+.btn-order-details-toggle:hover {
+  background: #DBEAFE;
+}
+
+.header-menu-dots-btn {
+  background: none;
+  border: none;
+  color: #64748B;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pinned Context Strip */
+.chat-pinned-context-bar {
+  background: #F1F5F9;
+  border-bottom: 1px solid var(--border-light);
+  padding: 6px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.pinned-order-tag {
+  color: var(--wm-blue-primary);
+}
+
+.pinned-product-name {
+  color: var(--text-secondary);
+}
+
+.btn-inspect-mini {
+  background: none;
+  border: none;
+  color: var(--wm-blue-primary);
+  font-weight: 700;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/* Chat Messages Stream */
+.chat-stream-body {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.45;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  animation: fadeInBubble 200ms ease;
+}
+
+@keyframes fadeInBubble {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.agent-bubble {
+  align-self: flex-start;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  border-bottom-left-radius: 4px;
+}
+
+.user-bubble {
+  align-self: flex-end;
+  background: var(--wm-blue-primary);
+  color: #FFFFFF;
+  border-bottom-right-radius: 4px;
+}
+
+.bubble-time {
+  font-size: 10px;
+  margin-top: 4px;
+  text-align: right;
+  opacity: 0.75;
+}
+
+.agent-bubble .bubble-time {
+  color: var(--text-muted);
+}
+
+.user-bubble .bubble-time {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Photo Attachment Bubble */
+.photo-attachment-card {
+  align-self: flex-end;
+  max-width: 82%;
+  background: var(--wm-blue-primary);
+  color: #FFFFFF;
+  border-radius: 18px;
+  border-bottom-right-radius: 4px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: fadeInBubble 200ms ease;
+}
+
+.photo-preview-box {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.photo-caption {
+  padding: 0 6px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+}
+
+.photo-caption .bubble-time {
+  margin: 0;
+}
+
+/* Typing Indicator Bubble */
+.typing-bubble {
+  align-self: flex-start;
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
+.typing-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.typing-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--wm-blue-primary);
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+.typing-dots span:nth-child(3) { animation-delay: 0s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* Sketch Step Walkthrough Advance Bar */
+.sketch-flow-advance-bar {
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  flex-shrink: 0;
+}
+
+.flow-step-label {
+  font-size: 11px;
+  color: #64748B;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.btn-flow-step {
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius-full);
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-flow-step:hover {
+  background: #E2E8F0;
+  border-color: var(--wm-blue-primary);
+}
+
+/* Sticky Bottom Composer Form */
+.chat-sticky-footer {
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  padding: 8px 12px;
+  flex-shrink: 0;
+  z-index: 40;
+}
+
+.chat-composer-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.composer-tool-btn {
+  background: none;
+  border: none;
+  color: #64748B;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.composer-tool-btn:hover {
+  color: var(--wm-blue-primary);
+}
+
+.composer-input {
+  flex: 1;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  padding: 10px 16px;
+  font-size: 13.5px;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.composer-input:focus {
+  border-color: var(--wm-blue-primary);
+  box-shadow: 0 0 0 2px rgba(0, 113, 220, 0.15);
+}
+
+.composer-send-btn {
+  background: var(--wm-blue-primary);
+  border: none;
+  color: #FFFFFF;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.composer-send-btn:hover {
+  background: var(--wm-blue-hover);
+}
+
+/* ==========================================================================
+   Screen D2: Order Details Slide-Over Drawer
+   ========================================================================== */
+.order-details-drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-app);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.order-details-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.drawer-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.order-box-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sketch-box-symbol {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: #EFF6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.order-info-cell {
+  flex: 1;
+}
+
+.order-num {
+  font-size: var(--font-size-md);
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+.order-status-date {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* Portable Blender Item Card (Exact to Sketch D2) */
+.item-product-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.item-product-card:hover {
+  border-color: var(--wm-blue-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.blender-icon-wrap {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: #EBF3FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.item-product-details {
+  flex: 1;
+}
+
+.product-title {
+  display: block;
+  font-size: 15px;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+.product-pricing {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.price-val {
+  color: var(--text-main);
+}
+
+/* Need help with this item? */
+.need-help-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.need-help-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.need-help-options {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.need-help-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 14.5px;
+  color: var(--text-main);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.need-help-row:last-child {
+  border-bottom: none;
+}
+
+.need-help-row:hover {
+  background: #F8FAFC;
+}
+
+.need-help-row.selected-help {
+  background: #F0F7FF;
+  font-weight: 700;
+  color: var(--wm-blue-primary);
+}
+
+.sketch-callout-quote {
+  background: #FFFBEB;
+  border: 1.5px dashed #F59E0B;
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  color: #B45309;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 280px;
+}
+
+.sketch-callout-quote.centered {
+  margin: 10px auto;
+}
+
+.quote-spark {
+  color: var(--wm-spark-orange);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   Sketch Comparison Slide-Over Modal & Toolbar Button
+   ========================================================================== */
+.sketch-toggle-btn {
+  background: #FFC220;
+  color: #041E42;
+  border: none;
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sketch-toggle-btn:hover {
+  background: #f5b716;
+}
+
+.sketch-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 17, 32, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sketch-modal-content {
+  background: #1E293B;
+  color: #FFFFFF;
+  border: 1px solid #334155;
+  border-radius: var(--radius-lg);
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.sketch-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 1.2rem;
+  margin-top: 4px;
+}
+
+.btn-close-modal {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-close-modal:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sketch-modal-body {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sketch-modal-desc {
+  font-size: var(--font-size-sm);
+  color: #CBD5E1;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.sketch-image-container {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.sketch-crop-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Crop to Row D: Live Chat */
+.crop-d {
+  object-fit: cover;
+  object-position: 0 100%;
+  max-height: 280px;
+}
